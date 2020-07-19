@@ -69,7 +69,7 @@ client.on("message", async message => {
       .setTitle("✦˛˙・ Действие")
       .setColor(0x00ae86)
       .setDescription(
-        `${message.author} кинул(-а) валенок в ${args[0]}`
+        `<@734402569937354753> кинул(-а) валенок в ${message.author}`
       )
       .setImage("https://memepedia.ru/wp-content/uploads/2020/06/guchi-flip-flaps-768x527.jpg");
     message.channel.send({ embed })
