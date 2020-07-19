@@ -53,6 +53,13 @@ client.on("message", async message => {
     message.channel.send({ embed });
   }
 
+  if (command === "admin") {
+    // Create the attachment using MessageAttachment
+    const attachment = new MessageAttachment('https://cdn.discordapp.com/attachments/686140206344175637/731902245502713906/kd47warh4823q.mp3');
+    // Send the attachment in the message channel with a content
+    message.channel.send(``, attachment);
+  }
+
   if (command === "ping") {
     const m = await message.channel.send("🌸 Ждём...");
     m.edit(`🌸 Пинг бота __${m.createdTimestamp - message.createdTimestamp}__ мс. Пинг Discord API __${Math.round(client.ping)}__ мс.`);
