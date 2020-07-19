@@ -48,28 +48,29 @@ client.on("message", async message => {
       )
       .addField(
         "Техническое",
-        config.prefix + "ping - проверить пинг бота"
+        config.prefix + "ping - проверить пинг бота" + "\n" config.prefix + "test - тестовая команда"
       );
     message.channel.send({ embed });
   }
 
   if (command === "ping") {
     const m = await message.channel.send("🌸 Ждём...");
-    m.edit(`🌸 Пинг бота __${m.createdTimestamp - message.createdTimestamp}__ мс. Пинг Discord API __${Math.round(client.ping)}ms__ мс.`);
+    m.edit(`🌸 Пинг бота __${m.createdTimestamp - message.createdTimestamp}__ мс. Пинг Discord API __${Math.round(client.ping)}__ мс.`);
   }
 
   if (command === "punch") {
     if (!args.length) {
       return message.channel.send(
-        `${message.author}, Нехватает аргументов команды`
+        `🌸 ${message.author}, нехватает аргументов команды (см. ` + config.prefix + `help)`
       );
     }
-
-    message.channel.send({
-      embed: {
-        color: 3447003,
-        description: `🤜 | ${message.author} **ударил(а)** ${args[0]}`
-      }
+    const embed = new Discord.RichEmbed()
+      .setTitle("✦˛˙・ test")
+      .setColor(0x00ae86)
+      .setDescription(
+        "аргумент: ${args[0]}"
+      );
+    message.channel.send({ embed });
     });
   }
 
