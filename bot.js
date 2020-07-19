@@ -1,4 +1,3 @@
-
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
@@ -37,8 +36,7 @@ client.on("message", async message => {
       .setTitle("Помощь по командам")
       .setColor(0x00c0ff)
       .setDescription(
-        "Салам
-        Алейкум\nептить"
+        "СаламАлейкум\nептить"
       )
       .setFooter("🐾 Версия бота v0.1 (от 19.07.2020)");
     message.channel.send({ embed });
