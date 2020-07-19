@@ -44,11 +44,11 @@ client.on("message", async message => {
       )
       .addField(
         "RP-команды",
-        config.prefix + "туттипокоманда"
+        config.prefix + "punch <@упоминание> - ударить\n" + config.prefix + "valenok <@упоминание> - кинуть валенок"
       )
       .addField(
         "Техническое",
-        config.prefix + "ping - проверить пинг бота\n" + config.prefix + "test - тестовая команда\n"
+        config.prefix + "ping - проверить пинг бота"
       );
     message.channel.send({ embed });
   }
@@ -71,6 +71,22 @@ client.on("message", async message => {
         `${message.author} ударил(-а) ${args[0]}`
       )
       .setImage("https://us.v-cdn.net/6030983/uploads/810/20II4DOWG62S.gif");
+    message.channel.send({ embed });
+  }
+
+  if (command === "valenok") {
+    if (!args.length) {
+      return message.channel.send(
+        `🌸 ${message.author}, нехватает аргументов команды (см. ` + config.prefix + `help)`
+      );
+    }
+    const embed = new Discord.RichEmbed()
+      .setTitle("✦˛˙・ Действие")
+      .setColor(0x00ae86)
+      .setDescription(
+        `${message.author} кинул(-а) валенок в ${args[0]}`
+      )
+      .setImage("https://img.allzip.org/g/12/orig/20769784_4630.gif");
     message.channel.send({ embed });
   }
 
