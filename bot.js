@@ -59,6 +59,7 @@ client.on("message", async message => {
   }
 
   if (command === "test") {
+    if (user.hasPermission("ADMINISTRATOR"){
     if (!args.length) {
       return message.channel.send(
         `🌸 ${message.author}, нехватает аргументов команды (см. ` + config.prefix + `help)`
@@ -71,6 +72,9 @@ client.on("message", async message => {
         `аргумент: ${args[0]}`
       );
     message.channel.send({ embed });
+    } else {
+    message.channel.send("Нету прав, окда?");
+    }
   }
 
   if (command === "me") {
