@@ -76,6 +76,14 @@ client.on("message", async message => {
      }, 14000);
   }
 
+  if (command === "avatar") {
+    const user = message.mentions.users.first() || message.author;
+    const embed = new Discord.RichEmbed()
+      .setTitle("✦˛˙・ Аватар ${args[0]}" + user.username)
+      .setImage(user.avatarURL);
+    message.channel.send({ embed });
+  }
+
   if (command === "ping") {
     const m = await message.channel.send("🌸 Ждём...");
     m.edit(`🌸 Пинг бота __${m.createdTimestamp - message.createdTimestamp}__ мс. Пинг Discord API __${Math.round(client.ping)}__ мс.`);
