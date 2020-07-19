@@ -79,7 +79,7 @@ client.on("message", async message => {
   if (command === "avatar") {
     const user = message.mentions.users.first() || message.author;
     const embed = new Discord.RichEmbed()
-      .setTitle("✦˛˙・ Аватар ${args[0]}" + user.username)
+      .setTitle("✦˛˙・ Аватар " + user.username)
       .setImage(user.avatarURL);
     message.channel.send({ embed });
   }
