@@ -252,7 +252,7 @@ client.on("message", async message => {
       .setTitle("✦˛˙・ Действие")
       .setColor(0xe6e600)
       .setDescription(
-        "${message.author} " + sayMessage
+        `${message.author} { sayMessage }`
       )
     message.channel.send({ embed });
   }
