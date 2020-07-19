@@ -110,6 +110,22 @@ client.on("message", async message => {
     message.channel.send({ embed });
   }
 
+  if (command === "hug") {
+    if (!args.length) {
+      return message.channel.send(
+        `🌸 ${message.author}, нехватает аргументов команды (см. ` + config.prefix + `help)`
+      );
+    }
+    const embed = new Discord.RichEmbed()
+      .setTitle("✦˛˙・ Действие")
+      .setColor(0x00ae86)
+      .setDescription(
+        `${message.author} обнял(-а) ${args[0]}`
+      )
+      .setImage("https://media1.tenor.com/images/7e30687977c5db417e8424979c0dfa99/tenor.gif?itemid=10522729");
+    message.channel.send({ embed });
+  }
+
   if (command === "me") {
     const sayMessage = args.join(" ");
     message.channel.send({
