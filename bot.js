@@ -58,23 +58,20 @@ client.on("message", async message => {
     m.edit(`🌸 Пинг бота __${m.createdTimestamp - message.createdTimestamp}__ мс. Пинг Discord API __${Math.round(client.ping)}__ мс.`);
   }
 
-  if (command === "test") {
-    if (user.hasPermission("ADMINISTRATOR"){
+  if (command === "punch") {
     if (!args.length) {
       return message.channel.send(
         `🌸 ${message.author}, нехватает аргументов команды (см. ` + config.prefix + `help)`
       );
     }
     const embed = new Discord.RichEmbed()
-      .setTitle("✦˛˙・ test")
-      .setColor(0x00ae86)
+      .setTitle("✦˛˙・ Действие")
+      .setColor(0xF6A5FF)
       .setDescription(
-        `аргумент: ${args[0]}`
+        `${message.author} ударил(-а) ${args[0]}`
+      .setImage("https://us.v-cdn.net/6030983/uploads/810/20II4DOWG62S.gif")
       );
     message.channel.send({ embed });
-    } else {
-    message.channel.send("Нету прав, окда?");
-    }
   }
 
   if (command === "me") {
