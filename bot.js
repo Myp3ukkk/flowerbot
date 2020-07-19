@@ -40,11 +40,11 @@ client.on("message", async message => {
         ""
       )
       .setFooter(
-        "Версия бота 0.1; Дата сборки - 19.07.2020"
+        "Версия бота 0.1 [ALPHA]; Дата сборки - 19.07.2020"
       )
       .addField(
         "RP-команды",
-        config.prefix + "punch <@упоминание> - ударить\n" + config.prefix + "valenok <@упоминание> - кинуть валенок\n" + config.prefix + "kill <@упоминание> - убить"
+        config.prefix + "punch <@упоминание> - ударить\n" + config.prefix + "valenok <@упоминание> - кинуть валенок\n" + config.prefix + "kill <@упоминание> - убить\n" + config.prefix + "hug <@упоминание> - обнять\n" + config.prefix + "kiss <@упоминание> - поцеловать\n"
       )
       .addField(
         "Техническое",
@@ -57,7 +57,7 @@ client.on("message", async message => {
     const m = await message.channel.send("```diff\n+ Загрузка админ панели +\n```");
     setTimeout(function(){ 
     m.edit("```diff\n- Ты опять выходишь на связь, мудило?\n```");
-     }, 4000);
+     }, 2000);
     setTimeout(function(){ 
     m.edit("```diff\n- СКОЛЬКО РАЗ ТЕБЕ БЛЯТЬ ОБЪЯСНЯТЬ ДОЛБОЁБИНА ТЫ ВЕЛИКОВОЗРАСТНАЯ БЛЯТЬ\n```");
      }, 6000);
@@ -142,6 +142,22 @@ client.on("message", async message => {
         `${message.author} обнял(-а) ${args[0]}`
       )
       .setImage("https://media1.tenor.com/images/7e30687977c5db417e8424979c0dfa99/tenor.gif?itemid=10522729");
+    message.channel.send({ embed });
+  }
+
+  if (command === "kiss") {
+    if (!args.length) {
+      return message.channel.send(
+        `🌸 ${message.author}, нехватает аргументов команды (см. ` + config.prefix + `help)`
+      );
+    }
+    const embed = new Discord.RichEmbed()
+      .setTitle("✦˛˙・ Действие")
+      .setColor(0x00ae86)
+      .setDescription(
+        `${message.author} поцеловал(-а) ${args[0]}`
+      )
+      .setImage("https://i.imgur.com/agdhkfE.gif");
     message.channel.send({ embed });
   }
 
