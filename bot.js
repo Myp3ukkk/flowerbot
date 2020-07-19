@@ -4,30 +4,29 @@ const client = new Discord.Client();
 const config = require("./config.json");
 
 client.on("ready", () => {
-  client.user.setPresence({ game: { name: `${client.guilds.size} сервер(-ов)`, type: 0 } });
-  client.user.setStatus("dnd");
+  client.user.setPresence({ game: { name: `🌸 ${client.guilds.size} сервер(-ов) :з`, type: 0 } });
+  client.user.setStatus("idle");
 });
 
 client.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.
   console.log(`Меня добавили на ${guild.name} (id: ${guild.id})`);
-  client.user.setPresence({ game: { name: `${client.guilds.size} сервер(-ов)`, type: 0 } });
+  client.user.setPresence({ game: { name: `🌸 ${client.guilds.size} сервер(-ов) :з`, type: 0 } });
 });
 
 client.on("guildDelete", guild => {
   // this event triggers when the bot is removed from a guild.
   console.log(`Меня удалили с ${guild.name} (id: ${guild.id})`);
-  client.user.setPresence({ game: { name: `${client.guilds.size} сервер(-ов)`, type: 0 } });
+  client.user.setPresence({ game: { name: `🌸 ${client.guilds.size} сервер(-ов) :з`, type: 0 } });
 });
 
-client.on("message", message => {
-  const args = message.content
-    .slice(config.prefix.length)
-    .trim()
-    .split(/ +/g);
+client.on("message", async message => {
+  if(message.author.bot) return;
+  if(!message.content.startsWith(config.prefix)) return;
+  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 
-  if (command === "admin.saycmd1") {
+  if (command === "saycmd1") {
     const sayMessage = args.join(" ");
     message.delete().catch(O_o => {});
     message.channel.send(sayMessage);
@@ -38,9 +37,10 @@ client.on("message", message => {
       .setTitle("Помощь по командам")
       .setColor(0x00c0ff)
       .setDescription(
-        "**k.punch <@упоминание>** - ударить\n**k.valenok <@упоминание>** - кинуть валенок\n**k.taburet <@упоминание>** - ударить табуретом\n**k.kill <@упоминание>** - убить\n**k.hug <@упоминание>** - обнять\n**k.kiss <@упоминание>** - поцеловать\n**k.poke <@упоминание>** - тыкнуть\n**k.pat <@упоминание>** - погладить\n**k.lick <@упоминание>** - лизнуть\n**k.bite <@упоминание>** - укусить\n**k.ox <@упоминание>** - быкануть\n**k.vodka** - уйти в запой\n**k.suicide** - совершить самоубийство\n**k.spinner** - покрутить спиннер\n**k.smokespinner** - покурить спиннер\n**``НОВОЕ`` k.me <действие...>** - отправить своё действие\n\n**k.nitro** - сгенерировать Discord Nitro\n**k.invite** - пригласить этого бота к себе на сервер"
+        "Салам
+        Алейкум\nептить"
       )
-      .setFooter("🐾 Версия бота v0.10.1 (от 17.07.2020)");
+      .setFooter("🐾 Версия бота v0.1 (от 19.07.2020)");
     message.channel.send({ embed });
   }
 
