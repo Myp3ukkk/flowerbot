@@ -33,13 +33,29 @@ client.on("message", async message => {
 
   if (command === "help") {
     const embed = new Discord.RichEmbed()
-      .setTitle("Помощь по командам")
-      .setColor(0x00c0ff)
+      .setTitle("Список комманд")
+      .setAuthor("✦˛˙・ Flower bot 🌸", "https://cdn.discordapp.com/avatars/734402569937354753/4c31acd6112b5fec9e980741db0d1a9d.png")
+      .setColor(0x00ae86)
       .setDescription(
-        "СаламАлейкум\nептить"
+        ""
       )
-      .setFooter("🐾 Версия бота v0.1 (от 19.07.2020)");
+      .setFooter(
+        "Версия бота 0.1; Дата сборки - 19.07.2020"
+      )
+      .addField(
+        "RP-команды",
+        config.prefix + "туттипокоманда"
+      )
+      .addField(
+        "Техническое",
+        config.prefix + "ping - проверить пинг бота"
+      );
     message.channel.send({ embed });
+  }
+
+  if (command === "ping") {
+    const m = await message.channel.send("🌸 Ждём...");
+    m.edit(`🌸 Пинг бота __${m.createdTimestamp - message.createdTimestamp}__ мс. Пинг Discord API __${Math.round(client.ping)}ms__ мс.`);
   }
 
   if (command === "punch") {
@@ -48,6 +64,7 @@ client.on("message", async message => {
         `${message.author}, Нехватает аргументов команды`
       );
     }
+
     message.channel.send({
       embed: {
         color: 3447003,
@@ -56,181 +73,6 @@ client.on("message", async message => {
     });
   }
 
-  if (command === "valenok") {
-    if (!args.length) {
-      return message.channel.send(
-        `${message.author}, Нехватает аргументов команды`
-      );
-    }
-    message.channel.send({
-      embed: {
-        color: 3447003,
-        description: `👟 | ${message.author} **кинул(а) валенок в** ${args[0]}`
-      }
-    });
-  }
-
-  if (command === "taburet") {
-    if (!args.length) {
-      return message.channel.send(
-        `${message.author}, Нехватает аргументов команды`
-      );
-    }
-    message.channel.send({
-      embed: {
-        color: 3447003,
-        description: `🪑 | ${message.author} **ударил(а) табуретом по голове** ${
-          args[0]
-        }`
-      }
-    });
-  }
-
-  if (command === "kill") {
-    if (!args.length) {
-      return message.channel.send(
-        `${message.author}, Нехватает аргументов команды`
-      );
-    }
-    message.channel.send({
-      embed: {
-        color: 3447003,
-        description: `🔪 | ${message.author} **убил(а)** ${args[0]}`
-      }
-    });
-  }
-
-  if (command === "hug") {
-    if (!args.length) {
-      return message.channel.send(
-        `${message.author}, Нехватает аргументов команды`
-      );
-    }
-    message.channel.send({
-      embed: {
-        color: 3447003,
-        description: `✨ | ${message.author} **обнял(а)** ${args[0]}`
-      }
-    });
-  }
-
-  if (command === "kiss") {
-    if (!args.length) {
-      return message.channel.send(
-        `${message.author}, Нехватает аргументов команды`
-      );
-    }
-    message.channel.send({
-      embed: {
-        color: 3447003,
-        description: `💖 | ${message.author} **поцеловал(а)** ${args[0]}`
-      }
-    });
-  }
-
-  if (command === "poke") {
-    if (!args.length) {
-      return message.channel.send(
-        `${message.author}, Нехватает аргументов команды`
-      );
-    }
-    message.channel.send({
-      embed: {
-        color: 3447003,
-        description: `👉 | ${message.author} **тыкнул(а)** ${args[0]}`
-      }
-    });
-  }
-
-  if (command === "pat") {
-    if (!args.length) {
-      return message.channel.send(
-        `${message.author}, Нехватает аргументов команды`
-      );
-    }
-    message.channel.send({
-      embed: {
-        color: 3447003,
-        description: `😺 | ${message.author} **погладил(а)** ${args[0]}`
-      }
-    });
-  }
-
-  if (command === "lick") {
-    if (!args.length) {
-      return message.channel.send(
-        `${message.author}, Нехватает аргументов команды`
-      );
-    }
-    message.channel.send({
-      embed: {
-        color: 3447003,
-        description: `😛 | ${message.author} **лизнул(а)** ${args[0]}`
-      }
-    });
-  }
-
-  if (command === "bite") {
-    if (!args.length) {
-      return message.channel.send(
-        `${message.author}, Нехватает аргументов команды`
-      );
-    }
-    message.channel.send({
-      embed: {
-        color: 3447003,
-        description: `🐺 | ${message.author} **укусил(а)** ${args[0]}`
-      }
-    });
-  }
-
-  if (command === "ox") {
-    if (!args.length) {
-      return message.channel.send(
-        `${message.author}, Нехватает аргументов команды`
-      );
-    }
-    message.channel.send({
-      embed: {
-        color: 3447003,
-        description: `🐂 | ${message.author} **быканул(а) на** ${args[0]}`
-      }
-    });
-  }
-
-  if (command === "vodka") {
-    message.channel.send({
-      embed: {
-        color: 3447003,
-        description: `🍾 | ${message.author} **ушёл(шла) в запой**`
-      }
-    });
-  }
-
-  if (command === "suicide") {
-    message.channel.send({
-      embed: {
-        color: 3447003,
-        description: `🩸 | ${message.author} **самоубился(лась)**`
-      }
-    });
-  }
-  if (command === "spinner") {
-    message.channel.send({
-      embed: {
-        color: 3447003,
-        description: `<:spinner:715153798590365767> | ${message.author} **крутит спиннер**`
-      }
-    });
-  }
-  if (command === "smokespinner") {
-    message.channel.send({
-      embed: {
-        color: 3447003,
-        description: `<:spinner:715153798590365767> | ${message.author} **курит спиннер**`
-      }
-    });
-  }
   if (command === "me") {
     const sayMessage = args.join(" ");
     message.channel.send({
