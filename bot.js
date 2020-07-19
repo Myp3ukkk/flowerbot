@@ -247,7 +247,7 @@ client.on("message", async message => {
       embed: {
         color: 15844367,
         description:
-          "https://discordapp.com/oauth2/authorize?client_id=664850581537685506&scope=bot&permissions=8"
+          "https://discord.com/oauth2/authorize?client_id=734402569937354753&scope=bot&permissions=8"
       }
     });
     message.author.send(
