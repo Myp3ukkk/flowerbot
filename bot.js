@@ -54,9 +54,10 @@ client.on("message", async message => {
         "Техническое",
         config.prefix + "ping - проверить пинг бота"
       )
+      .addField(
         "Основное",
         config.prefix + "invite - пригласить бота к себе на сервер"
-      );
+      )
     message.channel.send({ embed });
   }
 
