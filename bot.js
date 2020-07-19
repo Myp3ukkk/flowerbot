@@ -54,10 +54,7 @@ client.on("message", async message => {
   }
 
   if (command === "admin") {
-    // Create the attachment using MessageAttachment
-    const attachment = new MessageAttachment('https://cdn.discordapp.com/attachments/686140206344175637/731902245502713906/kd47warh4823q.mp3', 'admin.mp3');
-    // Send the attachment in the message channel with a content
-    message.channel.send(`...`, attachment);
+    message.channel.send("Ты опять выходишь на связь, мудило? Сколько раз тебе, блядь, ну сколько раз тебе говорить, долбоебина ты великовозрастная, блядь, ну что тебе, снять кеды, по ебальнику дать? Я с великим удовольствием, я тебе сказал, это сделаю. Hу неужели ты не понимаешь, что ты, сука, кругом под колпаком и ты еще вылазишь, а? Сучонок ебучий!");
   }
 
   if (command === "ping") {
