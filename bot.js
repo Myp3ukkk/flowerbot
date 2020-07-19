@@ -48,7 +48,7 @@ client.on("message", async message => {
       )
       .addField(
         "RP-команды",
-        config.prefix + "punch <@упоминание> - ударить\n" + config.prefix + "valenok <@упоминание> - кинуть валенок\n" + config.prefix + "kill <@упоминание> - убить\n" + config.prefix + "hug <@упоминание> - обнять\n" + config.prefix + "kiss <@упоминание> - поцеловать\n"
+        config.prefix + "punch <@упоминание> - ударить\n" + config.prefix + "valenok <@упоминание> - кинуть валенок\n" + config.prefix + "kill <@упоминание> - убить\n" + config.prefix + "hug <@упоминание> - обнять\n" + config.prefix + "kiss <@упоминание> - поцеловать\n" + config.prefix + "poke <@упоминание> - тыкнуть\n" + config.prefix + "pat <@упоминание> - погладить\n"
       )
       .addField(
         "Техническое",
@@ -171,6 +171,38 @@ client.on("message", async message => {
         `${message.author} поцеловал(-а) ${args[0]}`
       )
       .setImage("https://i.imgur.com/agdhkfE.gif");
+    message.channel.send({ embed });
+  }
+
+  if (command === "poke") {
+    if (!args.length) {
+      return message.channel.send(
+        `🌸 ${message.author}, нехватает аргументов команды (см. ` + config.prefix + `help)`
+      );
+    }
+    const embed = new Discord.RichEmbed()
+      .setTitle("✦˛˙・ Действие")
+      .setColor(0x00ae86)
+      .setDescription(
+        `${message.author} тыкнул(-а) ${args[0]}`
+      )
+      .setImage("https://tenor.com/view/bird-cute-poke-sweet-gif-16818145");
+    message.channel.send({ embed });
+  }
+
+  if (command === "pat") {
+    if (!args.length) {
+      return message.channel.send(
+        `🌸 ${message.author}, нехватает аргументов команды (см. ` + config.prefix + `help)`
+      );
+    }
+    const embed = new Discord.RichEmbed()
+      .setTitle("✦˛˙・ Действие")
+      .setColor(0x00ae86)
+      .setDescription(
+        `${message.author} погладил(-а) ${args[0]}`
+      )
+      .setImage("https://tenor.com/view/so-cute-cat-love-head-pat-gif-14623443");
     message.channel.send({ embed });
   }
 
