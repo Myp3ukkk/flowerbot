@@ -68,7 +68,7 @@ client.on("message", async message => {
       .setTitle("✦˛˙・ Действие")
       .setColor(0xF6A5FF)
       .setDescription(
-        `{message.author} ударил(-а) ${args[0]}`
+        `${message.author} ударил(-а) ${args[0]}`
       )
     message.channel.send({ embed });
   }
