@@ -37,7 +37,7 @@ client.on("message", async message => {
       .setAuthor("✦˛˙・ Flower bot 🌸", "https://cdn.discordapp.com/avatars/734402569937354753/4c31acd6112b5fec9e980741db0d1a9d.png")
       .setColor(0x00ae86)
       .setDescription(
-        ""
+        "Префикс - " + config.prefix
       )
       .setFooter(
         "Версия бота 0.1; Дата сборки - 19.07.2020"
@@ -48,7 +48,7 @@ client.on("message", async message => {
       )
       .addField(
         "Техническое",
-        config.prefix + "ping - проверить пинг бота\n" + config.prefix + "test - тестовая команда\n"
+         "ping - проверить пинг бота\ntest - тестовая команда"
       );
     message.channel.send({ embed });
   }
@@ -58,7 +58,7 @@ client.on("message", async message => {
     m.edit(`🌸 Пинг бота __${m.createdTimestamp - message.createdTimestamp}__ мс. Пинг Discord API __${Math.round(client.ping)}__ мс.`);
   }
 
-  if (command === "punch") {
+  if (command === "test") {
     if (!args.length) {
       return message.channel.send(
         `🌸 ${message.author}, нехватает аргументов команды (см. ` + config.prefix + `help)`
@@ -71,7 +71,6 @@ client.on("message", async message => {
         "аргумент: ${args[0]}"
       );
     message.channel.send({ embed });
-    });
   }
 
   if (command === "me") {
