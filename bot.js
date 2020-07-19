@@ -44,7 +44,7 @@ client.on("message", async message => {
       )
       .addField(
         "RP-команды",
-        config.prefix + "punch <@упоминание> - ударить\n" + config.prefix + "valenok <@упоминание> - кинуть валенок"
+        config.prefix + "punch <@упоминание> - ударить\n" + config.prefix + "valenok <@упоминание> - кинуть валенок\n" + config.prefix + "kill <@упоминание> - убить"
       )
       .addField(
         "Техническое",
@@ -87,6 +87,22 @@ client.on("message", async message => {
         `${message.author} кинул(-а) валенок в ${args[0]}`
       )
       .setImage("https://memepedia.ru/wp-content/uploads/2020/06/guchi-flip-flaps-768x527.jpg");
+    message.channel.send({ embed });
+  }
+
+  if (command === "kill") {
+    if (!args.length) {
+      return message.channel.send(
+        `🌸 ${message.author}, нехватает аргументов команды (см. ` + config.prefix + `help)`
+      );
+    }
+    const embed = new Discord.RichEmbed()
+      .setTitle("✦˛˙・ Действие")
+      .setColor(0x00ae86)
+      .setDescription(
+        `${message.author} убил(-а) ${args[0]}`
+      )
+      .setImage("https://i.pinimg.com/originals/2f/db/9b/2fdb9b55326dae2fdff809173932532b.gif");
     message.channel.send({ embed });
   }
 
