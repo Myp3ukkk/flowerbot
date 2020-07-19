@@ -37,7 +37,7 @@ client.on("message", async message => {
       .setAuthor("✦˛˙・ Flower bot 🌸", "https://cdn.discordapp.com/avatars/734402569937354753/4c31acd6112b5fec9e980741db0d1a9d.png")
       .setColor(0x00ae86)
       .setDescription(
-        "Префикс - " + config.prefix
+        ""
       )
       .setFooter(
         "Версия бота 0.1; Дата сборки - 19.07.2020"
@@ -48,7 +48,7 @@ client.on("message", async message => {
       )
       .addField(
         "Техническое",
-         "ping - проверить пинг бота\ntest - тестовая команда"
+        config.prefix + "ping - проверить пинг бота\n" + config.prefix + "ping - проверить пинг бота\n"
       );
     message.channel.send({ embed });
   }
