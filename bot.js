@@ -53,11 +53,14 @@ client.on("message", async message => {
     message.channel.send({ embed });
   }
 
-  if (command === "admin") {
-    const m = await message.channel.send("```diff\n+ Загрузка админ-панели +\n```");
+  if (command === "run") {
+    const m = await message.channel.send("```diff\n+ KOTE OS v0.1 +\n```");
     setTimeout(function(){ 
-    m.edit("```diff\n- Ты опять выходишь на связь, мудило? -\n```");
-     }, 5000);
+    m.edit("```diff\n+ KOTE OS v0.1 +\nStarting...\n```");
+     }, 2000);
+    setTimeout(function(){ 
+    m.edit("```diff\n+ KOTE OS v0.1 +\nStarting...\nERROR: Иди нахуй!\n```");
+     }, 4000);
   }
 
   if (command === "ping") {
