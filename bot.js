@@ -35,7 +35,7 @@ client.on("message", async message => {
     const embed = new Discord.RichEmbed()
       .setTitle("Список комманд")
       .setAuthor("✦˛˙・ Flower bot 🌸", "https://cdn.discordapp.com/avatars/734402569937354753/4c31acd6112b5fec9e980741db0d1a9d.png")
-      .setColor(0x00ae86)
+      .setColor(0xF6A5FF)
       .setDescription(
         ""
       )
@@ -66,10 +66,11 @@ client.on("message", async message => {
     }
     const embed = new Discord.RichEmbed()
       .setTitle("✦˛˙・ Действие")
-      .setColor(0xF6A5FF)
+      .setColor(0x00ae86)
       .setDescription(
         `${message.author} ударил(-а) ${args[0]}`
       )
+      .setImage("https://us.v-cdn.net/6030983/uploads/810/20II4DOWG62S.gif");
     message.channel.send({ embed });
   }
 
