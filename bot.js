@@ -53,14 +53,27 @@ client.on("message", async message => {
     message.channel.send({ embed });
   }
 
-  if (command === "run") {
-    const m = await message.channel.send("```diff\n+ KOTE OS v0.1 +\n```");
+  if (command === "admin") {
+    const m = await message.channel.send("```diff\n+ Загрузка админ панели +\n```");
     setTimeout(function(){ 
-    m.edit("```diff\n+ KOTE OS v0.1 +\nStarting...\n```");
-     }, 2000);
-    setTimeout(function(){ 
-    m.edit("```diff\n+ KOTE OS v0.1 +\nStarting...\nERROR: Иди нахуй!\n```");
+    m.edit("```diff\n- Ты опять выходишь на связь, мудило?\n```");
      }, 4000);
+    setTimeout(function(){ 
+    m.edit("```diff\n- СКОЛЬКО РАЗ ТЕБЕ БЛЯТЬ ОБЪЯСНЯТЬ ДОЛБОЁБИНА ТЫ ВЕЛИКОВОЗРАСТНАЯ БЛЯТЬ\n```");
+     }, 6000);
+    setTimeout(function(){ 
+    m.edit("```diff\n- Лови валенок в ебальник\n```");
+     }, 12000);
+    setTimeout(function(){ 
+    const embed = new Discord.RichEmbed()
+      .setTitle("✦˛˙・ Действие")
+      .setColor(0x00ae86)
+      .setDescription(
+        `${message.author} кинул(-а) валенок в ${args[0]}`
+      )
+      .setImage("https://memepedia.ru/wp-content/uploads/2020/06/guchi-flip-flaps-768x527.jpg");
+    message.channel.send({ embed });
+     }, 14000);
   }
 
   if (command === "ping") {
