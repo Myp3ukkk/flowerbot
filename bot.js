@@ -80,6 +80,7 @@ client.on("message", async message => {
     const user = message.mentions.users.first() || message.author;
     const embed = new Discord.RichEmbed()
       .setTitle("✦˛˙・ Аватар " + user.username)
+      .setColor(0x33cc33)
       .setImage(user.avatarURL);
     message.channel.send({ embed });
   }
