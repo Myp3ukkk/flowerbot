@@ -69,8 +69,8 @@ client.on("message", async message => {
       .setColor(0xF6A5FF)
       .setDescription(
         `${message.author} ударил(-а) ${args[0]}`
-      .setImage("https://us.v-cdn.net/6030983/uploads/810/20II4DOWG62S.gif")
-      );
+      )
+      .setImage("us.v-cdn.net/6030983/uploads/810/20II4DOWG62S.gif");
     message.channel.send({ embed });
   }
 
