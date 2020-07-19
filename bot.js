@@ -48,7 +48,7 @@ client.on("message", async message => {
       )
       .addField(
         "Техническое",
-        config.prefix + "ping - проверить пинг бота" + "\n" config.prefix + "test - тестовая команда"
+        config.prefix + "ping - проверить пинг бота" + "\n" + config.prefix + "test - тестовая команда"
       );
     message.channel.send({ embed });
   }
