@@ -72,7 +72,7 @@ client.on("message", async message => {
         `${message.author} кинул(-а) валенок в ${args[0]}`
       )
       .setImage("https://memepedia.ru/wp-content/uploads/2020/06/guchi-flip-flaps-768x527.jpg");
-    message.channel.send({ embed });
+    message.channel.send({ embed })
      }, 14000);
   }
 
