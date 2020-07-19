@@ -48,7 +48,7 @@ client.on("message", async message => {
       )
       .addField(
         "Техническое",
-        config.prefix + "ping - проверить пинг бота\n" + config.prefix + "ping - проверить пинг бота\n"
+        config.prefix + "ping - проверить пинг бота\n" + config.prefix + "test - тестовая команда\n"
       );
     message.channel.send({ embed });
   }
@@ -68,7 +68,7 @@ client.on("message", async message => {
       .setTitle("✦˛˙・ test")
       .setColor(0x00ae86)
       .setDescription(
-        "аргумент: ${args[0]}"
+        `аргумент: ${args[0]}`
       );
     message.channel.send({ embed });
   }
