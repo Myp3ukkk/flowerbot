@@ -48,7 +48,7 @@ client.on("message", async message => {
       )
       .addField(
         "RP-команды",
-        config.prefix + "punch <@упоминание> - ударить\n" + config.prefix + "valenok <@упоминание> - кинуть валенок\n" + config.prefix + "kill <@упоминание> - убить\n" + config.prefix + "hug <@упоминание> - обнять\n" + config.prefix + "kiss <@упоминание> - поцеловать\n" + config.prefix + "poke <@упоминание> - тыкнуть\n" + config.prefix + "pat <@упоминание> - погладить\n" + config.prefix + "lick <@упоминание> - лизнуть\n" + config.prefix + "bite <@упоминание> - укусить\n" + config.prefix + "me <текст> - своё действие\n"
+        config.prefix + "punch <@упоминание> - ударить\n" + config.prefix + "valenok <@упоминание> - кинуть валенок\n" + config.prefix + "kill <@упоминание> - убить\n" + config.prefix + "hug <@упоминание> - обнять\n" + config.prefix + "kiss <@упоминание> - поцеловать\n" + config.prefix + "poke <@упоминание> - тыкнуть\n" + config.prefix + "pat <@упоминание> - погладить\n" + config.prefix + "lick <@упоминание> - лизнуть\n" + config.prefix + "bite <@упоминание> - укусить\n"
       )
       .addField(
         "Техническое",
@@ -238,22 +238,6 @@ client.on("message", async message => {
         `${message.author} укусил(-а) ${args[0]}`
       )
       .setImage("https://tenor.com/view/annnoyed-angry-dog-bite-gif-7814431");
-    message.channel.send({ embed });
-  }
-
-  if (command === "me") {
-    const sayMessage = args.join(" ")
-    if (!sayMessage.length) {
-      return message.channel.send(
-        `🌸 ${message.author}, нехватает аргументов команды (см. ` + config.prefix + `help)`
-      );
-    }
-    const embed = new Discord.RichEmbed()
-      .setTitle("✦˛˙・ Действие")
-      .setColor(0xe6e600)
-      .setDescription(
-        `${message.author} { sayMessage }`
-      )
     message.channel.send({ embed });
   }
 
