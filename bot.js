@@ -48,7 +48,7 @@ client.on("message", async message => {
       )
       .addField(
         "RP-команды",
-        config.prefix + "punch <@упоминание> - ударить\n" + config.prefix + "valenok <@упоминание> - кинуть валенок\n" + config.prefix + "kill <@упоминание> - убить\n" + config.prefix + "hug <@упоминание> - обнять\n" + config.prefix + "kiss <@упоминание> - поцеловать\n" + config.prefix + "poke <@упоминание> - тыкнуть\n" + config.prefix + "pat <@упоминание> - погладить\n" + config.prefix + "lick <@упоминание> - лизнуть\n" + config.prefix + "bite <@упоминание> - укусить\n"
+        config.prefix + "punch <@упоминание> - ударить\n" + config.prefix + "valenok <@упоминание> - кинуть валенок\n" + config.prefix + "kill <@упоминание> - убить\n" + config.prefix + "hug <@упоминание> - обнять\n" + config.prefix + "kiss <@упоминание> - поцеловать\n" + config.prefix + "poke <@упоминание> - тыкнуть\n" + config.prefix + "pat <@упоминание> - погладить\n" + config.prefix + "lick <@упоминание> - лизнуть\n" + config.prefix + "bite <@упоминание> - укусить\n" + config.prefix + "vodka - уйти в запой\n" + config.prefix + "suicide <@упоминание> - суицид\n"
       )
       .addField(
         "Техническое",
@@ -239,6 +239,28 @@ client.on("message", async message => {
         `${message.author} укусил(-а) ${args[0]}`
       )
       .setImage("https://tenor.com/view/annnoyed-angry-dog-bite-gif-7814431");
+    message.channel.send({ embed });
+  }
+
+  if (command === "vodka") {
+    const embed = new Discord.RichEmbed()
+      .setTitle("✦˛˙・ Действие")
+      .setColor(0x00ae86)
+      .setDescription(
+        `${message.author} ушёл(-шла) в запой`
+      )
+      .setImage("https://imgur.com/X1oz824");
+    message.channel.send({ embed });
+  }
+
+  if (command === "suicide") {
+    const embed = new Discord.RichEmbed()
+      .setTitle("✦˛˙・ Действие")
+      .setColor(0x00ae86)
+      .setDescription(
+        `${message.author} покончил(-а) жизнь самоубийством`
+      )
+      .setImage("https://tenor.com/view/fake-suicide-fake-gun-how-imet-your-mother-barny-stinson-gif-4729061");
     message.channel.send({ embed });
   }
 
