@@ -40,7 +40,7 @@ client.on("message", async message => {
         "*Справка: <аргумент> - обязательное; (аргумент) - необязательное*"
       )
       .setFooter(
-        "Версия бота 0.1 [ALPHA]; Дата сборки - 19.07.2020"
+        "Версия бота 0.2; Дата сборки - 20.07.2020"
       )
       .addField(
         "Основное",
@@ -48,7 +48,7 @@ client.on("message", async message => {
       )
       .addField(
         "RP-команды",
-        config.prefix + "punch <@упоминание> - ударить\n" + config.prefix + "valenok <@упоминание> - кинуть валенок\n" + config.prefix + "kill <@упоминание> - убить\n" + config.prefix + "hug <@упоминание> - обнять\n" + config.prefix + "kiss <@упоминание> - поцеловать\n" + config.prefix + "poke <@упоминание> - тыкнуть\n" + config.prefix + "pat <@упоминание> - погладить\n" + config.prefix + "lick <@упоминание> - лизнуть\n" + config.prefix + "bite <@упоминание> - укусить\n" + config.prefix + "vodka - уйти в запой\n" + config.prefix + "suicide <@упоминание> - суицид\n"
+        config.prefix + "punch <@упоминание> - ударить\n" + config.prefix + "valenok <@упоминание> - кинуть валенок\n" + config.prefix + "kill <@упоминание> - убить\n" + config.prefix + "hug <@упоминание> - обнять\n" + config.prefix + "kiss <@упоминание> - поцеловать\n" + config.prefix + "poke <@упоминание> - тыкнуть\n" + config.prefix + "pat <@упоминание> - погладить\n" + config.prefix + "lick <@упоминание> - лизнуть\n" + config.prefix + "bite <@упоминание> - укусить\n" + config.prefix + "vodka - уйти в запой\n" + config.prefix + "suicide - суицид\n"
       )
       .addField(
         "Техническое",
