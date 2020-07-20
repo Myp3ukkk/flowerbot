@@ -3,8 +3,7 @@ const client = new Discord.Client();
 const config = require("./config.json");
 
 client.on("ready", () => {
-  client.user.setPresence({ game: { name: `🌸 ${client.guilds.size} сервер(-ов) :з`, type: 0 } });
-  client.user.setStatus("idle");
+  client.user.setPresence({ game: { name: `🌸 ${client.guilds.size} сервер(-ов) :з`, type: 0, browser: "DISCORD IOS" } });
 });
 
 client.on("guildCreate", guild => {
