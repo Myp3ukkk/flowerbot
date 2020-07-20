@@ -1,25 +1,22 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
-const Constants = require("discord.js/src/util/Constants.js");
 
 client.on("ready", () => {
   client.user.setPresence({ game: { name: `🌸 ${client.guilds.size} сервер(-ов) :з`, type: 0 } });
-  Constants.DefaultOptions.ws.properties.$browser = 'Discord iOS'
+  client.user.setStatus("idle");
 });
 
 client.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.
   console.log(`Меня добавили на ${guild.name} (id: ${guild.id})`);
   client.user.setPresence({ game: { name: `🌸 ${client.guilds.size} сервер(-ов) :з`, type: 0 } });
-  Constants.DefaultOptions.ws.properties.$browser = 'Discord iOS'
 });
 
 client.on("guildDelete", guild => {
   // this event triggers when the bot is removed from a guild.
   console.log(`Меня удалили с ${guild.name} (id: ${guild.id})`);
   client.user.setPresence({ game: { name: `🌸 ${client.guilds.size} сервер(-ов) :з`, type: 0 } });
-  Constants.DefaultOptions.ws.properties.$browser = 'Discord iOS'
 });
 
 client.on("message", async message => {
