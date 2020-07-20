@@ -249,7 +249,7 @@ client.on("message", async message => {
       .setDescription(
         `${message.author} ушёл(-шла) в запой`
       )
-      .setImage("https://imgur.com/X1oz824");
+      .setImage("https://i.imgur.com/X1oz824.gif");
     message.channel.send({ embed });
   }
 
@@ -260,7 +260,7 @@ client.on("message", async message => {
       .setDescription(
         `${message.author} покончил(-а) жизнь самоубийством`
       )
-      .setImage("https://tenor.com/view/fake-suicide-fake-gun-how-imet-your-mother-barny-stinson-gif-4729061");
+      .setImage("https://steamuserimages-a.akamaihd.net/ugc/849345589559162195/E8EF193A5FA363D9AECB4C1284973A7DB2E2992B");
     message.channel.send({ embed });
   }
 
