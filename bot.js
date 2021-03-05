@@ -50,6 +50,8 @@ client.on("message", async message => {
   }
 
   if (command === "вкид") {
+    const messages = ["message one", "message two", "message three", "message four"]
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
     const m = await message.channel.send("🥌 Оформляем вкид");
     setTimeout(function(){ 
     m.edit("🥌 Оформляем вкид.");
@@ -61,7 +63,7 @@ client.on("message", async message => {
     m.edit("🥌 Оформляем вкид...");
      }, 3000);
     setTimeout(function(){ 
-    m.edit("🔥 Вкид оформлен!\nВы вкинули: `чайный пакетик`\nСила вкида: `5/10 по шкале Анонимуса`");
+    m.edit(randomMessage);
      }, 6000);
   }
 
