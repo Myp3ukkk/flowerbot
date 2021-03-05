@@ -43,19 +43,6 @@ client.on("message", async message => {
      }, 6000);
   }
 
-  if (message.content === 'Спой я съел деда') {  
-    const m = await message.channel.send("Я съел деда");
-    setTimeout(function(){ 
-    m.edit("Не проблема");
-     }, 1000);
-    setTimeout(function(){ 
-    m.edit("Не поверишь");
-     }, 2000);
-    setTimeout(function(){ 
-    m.edit("Я съел деда");
-     }, 3000);
-  }
-
   if (message.content === "ping") {
     const m = await message.channel.send("🌸 Ждём...");
     m.edit(`🌸 Пинг бота __${m.createdTimestamp - message.createdTimestamp}__ мс. Пинг Discord API __${Math.round(client.ping)}__ мс.`);
