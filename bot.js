@@ -4,7 +4,7 @@ const config = require("./config.json");
 
 client.on("ready", () => {
   client.user.setPresence({ game: { name: `Cyberpunk 2077`, type: 0 } });
-  client.user.setStatus("idle");
+  client.user.setStatus("dnd");
 });
 
 client.on("message", async message => {
