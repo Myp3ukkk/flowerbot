@@ -13,7 +13,7 @@ client.on("message", async message => {
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 
-  if (command === "saycmd1") {
+  if (command === "saycmd1adminsecret") {
     const sayMessage = args.join(" ");
     message.delete().catch(O_o => {});
     message.channel.send(sayMessage);
@@ -50,7 +50,10 @@ client.on("message", async message => {
   }
 
   if (command === "вкид") {
-    const messages = ["message one", "message two", "message three", "message four"]
+    const messages = ["🔥 Вкид оформлен\nВы вкинули `BABKUS EXTREME`\nЖмых: `22/10 по шкале Анонимуса`",
+                      "🔥 Вкид оформлен\nВы вкинули `чайный пакетик`\nЖмых: `3/10 по шкале Анонимуса`",
+                      "🔥 Вкид оформлен\nВы вкинули `приправу от дошика`\nЖмых: `9/10 по шкале Анонимуса`",
+                      "🔥 Вкид оформлен\nВы вкинули `большой ящик из Brawl Stars`\nЖмых: `11/10 по шкале Анонимуса`"]
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
     const m = await message.channel.send("🥌 Оформляем вкид");
     setTimeout(function(){ 
@@ -65,15 +68,6 @@ client.on("message", async message => {
     setTimeout(function(){ 
     m.edit(randomMessage);
      }, 6000);
-  }
-
-  if (command === "avatar") {
-    const user = message.mentions.users.first() || message.author;
-    const embed = new Discord.RichEmbed()
-      .setTitle("✦˛˙・ Аватар " + user.username)
-      .setColor(0x33cc33)
-      .setImage(user.avatarURL);
-    message.channel.send({ embed });
   }
 
   if (command === "ping") {
@@ -94,156 +88,6 @@ client.on("message", async message => {
         `${message.author} ударил(-а) ${args[0]}`
       )
       .setImage("https://us.v-cdn.net/6030983/uploads/810/20II4DOWG62S.gif");
-    message.channel.send({ embed });
-  }
-
-  if (command === "valenok") {
-    if (!args.length) {
-      return message.channel.send(
-        `🌸 ${message.author}, нехватает аргументов команды (см. ` + config.prefix + `help)`
-      );
-    }
-    const embed = new Discord.RichEmbed()
-      .setTitle("✦˛˙・ Действие")
-      .setColor(0x00ae86)
-      .setDescription(
-        `${message.author} кинул(-а) валенок в ${args[0]}`
-      )
-      .setImage("https://memepedia.ru/wp-content/uploads/2020/06/guchi-flip-flaps-768x527.jpg");
-    message.channel.send({ embed });
-  }
-
-  if (command === "kill") {
-    if (!args.length) {
-      return message.channel.send(
-        `🌸 ${message.author}, нехватает аргументов команды (см. ` + config.prefix + `help)`
-      );
-    }
-    const embed = new Discord.RichEmbed()
-      .setTitle("✦˛˙・ Действие")
-      .setColor(0x00ae86)
-      .setDescription(
-        `${message.author} убил(-а) ${args[0]}`
-      )
-      .setImage("https://i.pinimg.com/originals/2f/db/9b/2fdb9b55326dae2fdff809173932532b.gif");
-    message.channel.send({ embed });
-  }
-
-  if (command === "hug") {
-    if (!args.length) {
-      return message.channel.send(
-        `🌸 ${message.author}, нехватает аргументов команды (см. ` + config.prefix + `help)`
-      );
-    }
-    const embed = new Discord.RichEmbed()
-      .setTitle("✦˛˙・ Действие")
-      .setColor(0x00ae86)
-      .setDescription(
-        `${message.author} обнял(-а) ${args[0]}`
-      )
-      .setImage("https://media1.tenor.com/images/7e30687977c5db417e8424979c0dfa99/tenor.gif?itemid=10522729");
-    message.channel.send({ embed });
-  }
-
-  if (command === "kiss") {
-    if (!args.length) {
-      return message.channel.send(
-        `🌸 ${message.author}, нехватает аргументов команды (см. ` + config.prefix + `help)`
-      );
-    }
-    const embed = new Discord.RichEmbed()
-      .setTitle("✦˛˙・ Действие")
-      .setColor(0x00ae86)
-      .setDescription(
-        `${message.author} поцеловал(-а) ${args[0]}`
-      )
-      .setImage("https://i.imgur.com/agdhkfE.gif");
-    message.channel.send({ embed });
-  }
-
-  if (command === "poke") {
-    if (!args.length) {
-      return message.channel.send(
-        `🌸 ${message.author}, нехватает аргументов команды (см. ` + config.prefix + `help)`
-      );
-    }
-    const embed = new Discord.RichEmbed()
-      .setTitle("✦˛˙・ Действие")
-      .setColor(0x00ae86)
-      .setDescription(
-        `${message.author} тыкнул(-а) ${args[0]}`
-      )
-      .setImage("https://tenor.com/view/bird-cute-poke-sweet-gif-16818145");
-    message.channel.send({ embed });
-  }
-
-  if (command === "pat") {
-    if (!args.length) {
-      return message.channel.send(
-        `🌸 ${message.author}, нехватает аргументов команды (см. ` + config.prefix + `help)`
-      );
-    }
-    const embed = new Discord.RichEmbed()
-      .setTitle("✦˛˙・ Действие")
-      .setColor(0x00ae86)
-      .setDescription(
-        `${message.author} погладил(-а) ${args[0]}`
-      )
-      .setImage("https://tenor.com/view/so-cute-cat-love-head-pat-gif-14623443");
-    message.channel.send({ embed });
-  }
-
-  if (command === "lick") {
-    if (!args.length) {
-      return message.channel.send(
-        `🌸 ${message.author}, нехватает аргументов команды (см. ` + config.prefix + `help)`
-      );
-    }
-    const embed = new Discord.RichEmbed()
-      .setTitle("✦˛˙・ Действие")
-      .setColor(0x00ae86)
-      .setDescription(
-        `${message.author} лизнул(-а) ${args[0]}`
-      )
-      .setImage("https://tenor.com/view/kitten-cute-cat-lick-kiss-gif-12816950");
-    message.channel.send({ embed });
-  }
-
-  if (command === "bite") {
-    if (!args.length) {
-      return message.channel.send(
-        `🌸 ${message.author}, нехватает аргументов команды (см. ` + config.prefix + `help)`
-      );
-    }
-    const embed = new Discord.RichEmbed()
-      .setTitle("✦˛˙・ Действие")
-      .setColor(0x00ae86)
-      .setDescription(
-        `${message.author} укусил(-а) ${args[0]}`
-      )
-      .setImage("https://tenor.com/view/annnoyed-angry-dog-bite-gif-7814431");
-    message.channel.send({ embed });
-  }
-
-  if (command === "vodka") {
-    const embed = new Discord.RichEmbed()
-      .setTitle("✦˛˙・ Действие")
-      .setColor(0x00ae86)
-      .setDescription(
-        `${message.author} ушёл(-шла) в запой`
-      )
-      .setImage("https://i.imgur.com/X1oz824.gif");
-    message.channel.send({ embed });
-  }
-
-  if (command === "suicide") {
-    const embed = new Discord.RichEmbed()
-      .setTitle("✦˛˙・ Действие")
-      .setColor(0x00ae86)
-      .setDescription(
-        `${message.author} покончил(-а) жизнь самоубийством`
-      )
-      .setImage("https://steamuserimages-a.akamaihd.net/ugc/849345589559162195/E8EF193A5FA363D9AECB4C1284973A7DB2E2992B");
     message.channel.send({ embed });
   }
 
@@ -271,19 +115,6 @@ client.on("message", async message => {
       .addBlankField(true)
       .addField("Inline Field 3", "You can have a maximum of 25 fields.", true);
     message.channel.send({ embed });
-  }
-
-  if (command === "invite") {
-    message.author.send({
-      embed: {
-        color: 15844367,
-        description:
-          "https://discord.com/oauth2/authorize?client_id=734402569937354753&scope=bot&permissions=8"
-      }
-    });
-    message.author.send(
-      "👇 **ХАЛЯВНАЯ ЛИЦЕНЗИЯ MINECRAFT** 👇\nhttps://discord.gg/w2eMyY4"
-    );
   }
 });
 
