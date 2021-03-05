@@ -9,47 +9,13 @@ client.on("ready", () => {
 
 client.on("message", async message => {
   if(message.author.bot) return;
-  if(!message.content.startsWith(config.prefix)) return;
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-  const command = args.shift().toLowerCase();
-
-  if (command === "saycmd1adminsecret") {
-    const sayMessage = args.join(" ");
-    message.delete().catch(O_o => {});
-    message.channel.send(sayMessage);
+  
+  if (message.content === "Бот, ты жив?") {  
+    message.channel.send("Прикинь да");
   }
-
-  if (command === "help") {
-    const embed = new Discord.RichEmbed()
-      .setTitle("Список комманд")
-      .setAuthor("✦˛˙・ Flower bot 🌸", "https://cdn.discordapp.com/avatars/734402569937354753/4c31acd6112b5fec9e980741db0d1a9d.png")
-      .setColor(0xF6A5FF)
-      .setDescription(
-        "*Справка: <аргумент> - обязательное; (аргумент) - необязательное*"
-      )
-      .setFooter(
-        "Версия бота 0.2; Дата сборки - 20.07.2020"
-      )
-      .addField(
-        "Основное",
-        config.prefix + "avatar (@упоминание) - получить аватар пользователя"
-      )
-      .addField(
-        "RP-команды",
-        config.prefix + "punch <@упоминание> - ударить\n" + config.prefix + "valenok <@упоминание> - кинуть валенок\n" + config.prefix + "kill <@упоминание> - убить\n" + config.prefix + "hug <@упоминание> - обнять\n" + config.prefix + "kiss <@упоминание> - поцеловать\n" + config.prefix + "poke <@упоминание> - тыкнуть\n" + config.prefix + "pat <@упоминание> - погладить\n" + config.prefix + "lick <@упоминание> - лизнуть\n" + config.prefix + "bite <@упоминание> - укусить\n" + config.prefix + "vodka - уйти в запой\n" + config.prefix + "suicide - суицид\n"
-      )
-      .addField(
-        "Техническое",
-        config.prefix + "ping - проверить пинг бота"
-      )
-      .addField(
-        "Основное",
-        config.prefix + "invite - пригласить бота к себе на сервер"
-      )
-    message.channel.send({ embed });
-  }
-
-  if (command === "вкид") {
+  
+  if (message.content === 'Вкид') {  
     const messages = ["🔥 Вкид оформлен\nВы вкинули `BABKUS EXTREME`\nЖмых: `22/10 по шкале Анонимуса`",
                       "🔥 Вкид оформлен\nВы вкинули `чайный пакетик`\nЖмых: `3/10 по шкале Анонимуса`",
                       "🔥 Вкид оформлен\nВы вкинули `приправу от дошика`\nЖмых: `9/10 по шкале Анонимуса`",
@@ -70,7 +36,7 @@ client.on("message", async message => {
      }, 6000);
   }
 
-  if (command === "ping") {
+  if (message.content === "ping") {
     const m = await message.channel.send("🌸 Ждём...");
     m.edit(`🌸 Пинг бота __${m.createdTimestamp - message.createdTimestamp}__ мс. Пинг Discord API __${Math.round(client.ping)}__ мс.`);
   }
@@ -91,7 +57,7 @@ client.on("message", async message => {
     message.channel.send({ embed });
   }
 
-  if (command === "embedcmd1") {
+  if (message.content === "embedcmd1test") {
     const embed = new Discord.RichEmbed()
       .setTitle("This is your title, it can hold 256 characters")
       .setAuthor("Author Name", "https://i.imgur.com/lm8s41J.png")
