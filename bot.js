@@ -3,20 +3,8 @@ const client = new Discord.Client();
 const config = require("./config.json");
 
 client.on("ready", () => {
-  client.user.setPresence({ game: { name: `🌸 ${client.guilds.size} сервер(-ов) :з`, type: 0 } });
+  client.user.setPresence({ game: { name: `Cyberpunk 2077`, type: 0 } });
   client.user.setStatus("idle");
-});
-
-client.on("guildCreate", guild => {
-  // This event triggers when the bot joins a guild.
-  console.log(`Меня добавили на ${guild.name} (id: ${guild.id})`);
-  client.user.setPresence({ game: { name: `🌸 ${client.guilds.size} сервер(-ов) :з`, type: 0 } });
-});
-
-client.on("guildDelete", guild => {
-  // this event triggers when the bot is removed from a guild.
-  console.log(`Меня удалили с ${guild.name} (id: ${guild.id})`);
-  client.user.setPresence({ game: { name: `🌸 ${client.guilds.size} сервер(-ов) :з`, type: 0 } });
 });
 
 client.on("message", async message => {
@@ -61,27 +49,20 @@ client.on("message", async message => {
     message.channel.send({ embed });
   }
 
-  if (command === "admin") {
-    const m = await message.channel.send("```diff\n+ Загрузка админ панели +\n```");
+  if (command === "вкид") {
+    const m = await message.channel.send("🥌 Оформляем вкид");
     setTimeout(function(){ 
-    m.edit("```diff\n- Ты опять выходишь на связь, мудило?\n```");
+    m.edit("🥌 Оформляем вкид.");
+     }, 1000);
+    setTimeout(function(){ 
+    m.edit("🥌 Оформляем вкид..");
      }, 2000);
     setTimeout(function(){ 
-    m.edit("```diff\n- СКОЛЬКО РАЗ ТЕБЕ БЛЯТЬ ОБЪЯСНЯТЬ ДОЛБОЁБИНА ТЫ ВЕЛИКОВОЗРАСТНАЯ БЛЯТЬ\n```");
+    m.edit("🥌 Оформляем вкид...");
+     }, 3000);
+    setTimeout(function(){ 
+    m.edit("🔥 Вкид оформлен!\nВы вкинули: `чайный пакетик`\nСила вкида: `5/10 по шкале Анонимуса`");
      }, 6000);
-    setTimeout(function(){ 
-    m.edit("```diff\n- Лови валенок в ебальник\n```");
-     }, 12000);
-    setTimeout(function(){ 
-    const embed = new Discord.RichEmbed()
-      .setTitle("✦˛˙・ Действие")
-      .setColor(0x00ae86)
-      .setDescription(
-        `<@734402569937354753> кинул(-а) валенок в ${message.author}`
-      )
-      .setImage("https://memepedia.ru/wp-content/uploads/2020/06/guchi-flip-flaps-768x527.jpg");
-    message.channel.send({ embed })
-     }, 14000);
   }
 
   if (command === "avatar") {
