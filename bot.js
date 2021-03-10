@@ -72,18 +72,18 @@ client.on("message", async message => {
      }, 14000);
   }
 
-  if (message.content === 'Сус') {  
-    message.channel.send("amogus 😮😮😮😱😱😱😱😱😳😳😳😳😳");
-    setTimeout(function(){ 
-    message.channel.send("😮😳😮😮😱😳😱😳😮😳😱😳😱😮😱😳😮😱");
-     }, 3000);
-    setTimeout(function(){ 
-    message.channel.send("😳😳😳😮😳😮😳😮😮😳😮😱😱😱😮😮😮😱😳😱😳😮😳");
-     }, 4000);
-    setTimeout(function(){ 
-    message.channel.send("omzit is sus 😮😱😮😮😮😮😱😳😮😱😮😱😮😳😱😮😮");
-     }, 5000);
-  }
+#  if (message.content === 'Сус') {  
+#    message.channel.send("amogus 😮😮😮😱😱😱😱😱😳😳😳😳😳");
+#    setTimeout(function(){ 
+#    message.channel.send("😮😳😮😮😱😳😱😳😮😳😱😳😱😮😱😳😮😱");
+#     }, 3000);
+#    setTimeout(function(){ 
+#    message.channel.send("😳😳😳😮😳😮😳😮😮😳😮😱😱😱😮😮😮😱😳😱😳😮😳");
+#     }, 4000);
+#    setTimeout(function(){ 
+#    message.channel.send("omzit is sus 😮😱😮😮😮😮😱😳😮😱😮😱😮😳😱😮😮");
+#     }, 5000);
+#  }
 
   if (message.content === "ping") {
     const m = await message.channel.send("🌸 Ждём...");
